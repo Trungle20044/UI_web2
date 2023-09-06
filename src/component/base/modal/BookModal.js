@@ -41,6 +41,24 @@ export default function BookModal({ isOpen, setOpen }) {
     if (data.title !== '' && data.author !== '' && data.parts && data.author) {
       dispatch(createBook(data));
       setOpen(false);
+      setBookData({
+        title: {
+          value: "",
+          isError: false,
+        },
+        author: {
+          value: "",
+          isError: false,
+        },
+        parts: {
+          value: "",
+          isError: false,
+        },
+        category: {
+          value: "",
+          isError: false,
+        },
+      })
     }
       
   };

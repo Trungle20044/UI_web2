@@ -7,12 +7,14 @@ import { useEffect } from "react";
 import { getToken } from "./utilities/cookies";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "./containers/Auth/actions";
+import SignUp from "./pages/signUp";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     const token = getToken();
+
     if(token) {
       dispatch(loginSuccess());
     }
@@ -30,6 +32,7 @@ function App() {
             />
 
             <Route exact path="/sign-in" component={SignIn} />
+            <Route exact path="/sign-up" component={SignUp} />
           </Switch>
         </Layout>
       </BrowserRouter>
